@@ -1,0 +1,15 @@
+# Directories
+../.idea/
+.idea/
+venv
+__pycache__/
+data
+flask_session/
+
+# Files
+.env
+debugger.py
+experimental/experimental_funcs.py
+conf/aad.config.json
+conf/app_config.py
+custom_prompts/prompts_experiments

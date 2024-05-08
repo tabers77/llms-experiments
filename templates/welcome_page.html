@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if g.identity_context_data.authenticated %}Home Page {% else %}Welcome Page {% endif %}</title>
+    <link rel="stylesheet" type="text/css" href="../static/styles.css">
+
+
+</head>
+
+<body>
+    {% if g.identity_context_data.authenticated %}
+    <!-- If user is signed in TESTING MODE-->
+    {% include 'base_index.html' %}
+
+    {% else %}
+    <div class="welcome-container">
+         <img src="/static/storaenso_logo.png" alt="Your Logo" style="max-width: 60px;">
+
+        <p class="welcome-text">You are not signed in. Please sign in!</p>
+        <div class="signin-container">
+            <a href="{{ ms_id_url_for('sign_in') }}" class="btn-signin">Sign In</a>
+        </div>
+    </div>
+    {% endif %}
+</body>
+
+</html>

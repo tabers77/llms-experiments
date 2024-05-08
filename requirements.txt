@@ -1,0 +1,32 @@
+Flask==3.0.2
+werkzeug>= 3.0.1
+flask-session==0.5.0
+git+https://github.com/azure-samples/ms-identity-python-samples-common
+dataclasses_json
+docx2pdf==0.1.8
+pandas
+
+pypdf2
+langchain-openai
+langchain
+langchainhub==0.1.15
+langchain_experimental
+faiss-cpu
+python-dotenv
+
+InstructorEmbedding==1.0.1
+torch>=1.6.0 # TODO: UNINSTALL THIS, Note that this installation does not work with python 3.9 , current version python==3.10.5
+sentence-transformers==2.2.2
+
+azure-storage-blob
+
+psycopg2-binary==2.9.9
+pgvector==0.2.5
+
+duckduckgo_search==5.3.0
+
+# Commenting out the following lines
+# pandas
+# SpeechRecognition==3.10.1
+# pyaudio
+# pytest

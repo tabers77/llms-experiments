@@ -1,0 +1,137 @@
+<!-- NOTE: THIS A TEMPORARY HTML FILE FOR EXPERIMENTATION-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Include Chart.js library TEST -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/styles.css">
+
+    <!-- MARKED DOWN -->
+    <div id="content"></div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
+    <!-- ARROW ICON -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- PRISM -->
+    <link href="../static/prism.css" rel="stylesheet"/>
+
+
+</head>
+
+<body>
+<div id="graph"></div>  <!-- TEST -->
+
+<!-- Sidebar TEST -->
+<div class="sidebar">
+    <!-- Sidebar content goes here -->
+    <!-- You can add links, navigation, or any other content you need -->
+    <button> New Chat</button>
+    <div class="history"></div>
+</div>
+<!-- Sidebar TEST -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <!-- Logo Here -->
+    <a class="navbar-brand" href="#">
+        <img src="/static/storaenso_logo.png" alt="Your Logo" style="max-width: 35px;">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <span class="navbar-text">{{ g.identity_context_data.username }}</span>
+            </li>
+            <li class="nav-item">
+                <div class="logout_wrapper">
+                    <a href="{{ ms_id_url_for('sign_out') }}" class="button_close">Sign Out</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../static/js_funcs_exp.js"></script>
+
+<!-- Chat window -->
+<div class="chat_window">
+    <!-- Top menu -->
+
+    <div class="top_menu">
+        <!-- Title of the chat window -->
+        <div class="title">CodeGenie:</div>
+
+        <!-- Dropdown selector  -->
+        <div class="dropdown_selector">
+            <label for="chatType" class="bold_label">Chat Mode</label>
+            <select id="chatType">
+                <option value="EDA"> EDA</option>
+                <option value="Coding" selected>Coding</option>
+            </select>
+        </div>
+
+
+        <!-- Add file upload button TEST -->
+        <form action="" method="POST" enctype="multipart/form-data" class="form-container">
+            <input type="file" name="csvfile" id="csvfile" value="">
+            <label for="csvfile">Choose CSV File</label>
+            <input type="submit" name="" value="Upload">
+        </form>
+        <!-- Add file upload button TEST -->
+
+
+    </div>
+
+    <!-- Messages container -->
+    <ul class="messages"></ul>
+
+    <!-- Message input and send button -->
+    <div class="bottom_wrapper clearfix">
+        <textarea placeholder="Type your message here." class="message_input" rows="1"></textarea>
+        <i class="fas fa-arrow-up"></i>
+
+    </div>
+
+
+    <!-- Template for messages -->
+
+    <div class="message_template">
+        <li class="message">
+            <div class="avatar"></div>
+            <div class="text_wrapper">
+                <div class="text"></div>
+                <script src="../static/prism.js"></script>
+
+            </div>
+        </li>
+    </div>
+</div>
+
+
+<!-- Add text at the bottom middle -->
+<div class="footer_text">
+    This is an experimental version of a RAG model with experimental prompt templates that may produce erroneous output.
+</div>
+
+
+</body>
+
+</html>
