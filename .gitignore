@@ -9,7 +9,7 @@ flask_session/
 # Files
 .env
 debugger.py
-experimental/experimental_funcs.py
+experimental
 conf/aad.config.json
 conf/app_config.py
 custom_prompts/prompts_experiments
